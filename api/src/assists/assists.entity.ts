@@ -1,9 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Unique,
-  ManyToOne,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Unique, ManyToOne } from 'typeorm';
 import { Parties } from '../parties/parties.entity';
 import { Users } from '../users/users.entity';
 
