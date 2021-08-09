@@ -2,13 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 //import React from 'react';
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
-import { StyleSheet, Text, View , Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View , Image, TouchableOpacity, TouchableHighlight} from 'react-native';
 
 export default function App() {
   return (
     <View  style={styleIndex.container}>
     <View style={styleIndex.header}>
-     <View style={styleIndex.menuIcon}>
+     <TouchableHighlight style={styleIndex.menuIcon}>
           <Svg 
           style={{ width: 20, height: 20, marginLeft:"10%"}}
           xmlns="http://www.w3.org/2000/svg"
@@ -19,13 +19,13 @@ export default function App() {
           <Path d="M0 149.333H341.333V192H0z"/>
           <Path d="M0 21.333H341.333V64H0z"/>
           </Svg>
-      </View>
+      </TouchableHighlight>
       <View style={styleIndex.logoStyle}>
           <Image          
             source={require('./assets/joda-logo.jpg')} style={{ width: 100, height: "100%" }}
           />
       </View>
-      <View style={styleIndex.plusStyle}>
+      <TouchableHighlight style={styleIndex.plusStyle}>
         <Svg
         xmlns="http://www.w3.org/2000/svg"
         style={{ width: 20, height: 20, marginRight:"10%"}}
@@ -33,7 +33,7 @@ export default function App() {
         >
         <Path d="M408 184H272a8 8 0 01-8-8V40c0-22.09-17.91-40-40-40s-40 17.91-40 40v136a8 8 0 01-8 8H40c-22.09 0-40 17.91-40 40s17.91 40 40 40h136a8 8 0 018 8v136c0 22.09 17.91 40 40 40s40-17.91 40-40V272a8 8 0 018-8h136c22.09 0 40-17.91 40-40s-17.91-40-40-40zm0 0"/>
       </Svg>
-      </View>
+      </TouchableHighlight>
 
     </View>
     <View>
@@ -71,7 +71,9 @@ export default function App() {
                 <Image          
                   source={require('./assets/home/house-party.png')} style={categoriesStyle.categorieIMG}
                 />
-                <Text>Categoria 5</Text>
+                <View style={categoriesStyle.specialTitleContainer}>
+                <Text style={categoriesStyle.specialTitle}>Categoria 5</Text>
+                </View>
               </TouchableOpacity>
             </View>
         </View>
@@ -150,6 +152,17 @@ const categoriesStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: "5%",
+  },
+  specialTitle: {
+    padding: "5px",
+    backgroundColor: "#D553DD",
+    fontWeight: "450",
+    borderRadius: 100,
+  },  
+  specialTitleContainer: {
+    padding: "5px",
+    backgroundColor: "#C215B4",
+    borderRadius: 100,
   },
 
 });
