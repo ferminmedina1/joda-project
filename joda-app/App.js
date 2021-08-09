@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 //import React from 'react';
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
-import { StyleSheet, Text, View , Image} from 'react-native';
+import { StyleSheet, Text, View , Image, TouchableOpacity} from 'react-native';
 
 export default function App() {
   return (
@@ -36,7 +36,47 @@ export default function App() {
       </View>
 
     </View>
-    <View></View>
+    <View>
+      <View style={styleIndex.contentContainer}>
+          <Text style={categoriesStyle.subtitle}>¿Se sale?</Text>
+        <View style={categoriesStyle.categoriesImgContainer}>
+          <View style={categoriesStyle.categoriesContainerUP}>
+            <TouchableOpacity style={categoriesStyle.categorieTouchable}>
+              <Image          
+                source={require('./assets/home/disco.png')} style={categoriesStyle.categorieIMG}
+              />
+              <Text>Categoria 1</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={categoriesStyle.categorieTouchable}>
+              <Image          
+                source={require('./assets/home/drinks.png')} style={categoriesStyle.categorieIMG}
+              />
+              <Text>Categoria 2</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={categoriesStyle.categorieTouchable}>
+              <Image          
+                source={require('./assets/home/party.png')} style={categoriesStyle.categorieIMG}
+              />
+              <Text>Categoria 3</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={categoriesStyle.categoriesContainerDOWN}>
+            <TouchableOpacity style={categoriesStyle.categorieTouchable}>
+                <Image          
+                  source={require('./assets/home/after.png')} style={categoriesStyle.categorieIMG}
+                />
+                <Text>Categoria 4</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={categoriesStyle.categorieTouchable}>
+                <Image          
+                  source={require('./assets/home/house-party.png')} style={categoriesStyle.categorieIMG}
+                />
+                <Text>Categoria 5</Text>
+              </TouchableOpacity>
+            </View>
+        </View>
+      </View>
+    </View>
     </View>
   );
 }
@@ -49,30 +89,67 @@ const styleIndex = StyleSheet.create({
   header: {
     borderBottomWidth: "1px",
     borderBottomColor: "#c1c1c1",
-    flex: 0.1,
+    flex: 0.2,
     flexDirection: 'row',
     alignItems: "strech",
     justifyContent: 'space-between',
-    height: "10%",
-    backgroundColor:'red'
+    height: "1%",
+    //backgroundColor:'red'
   },
   menuIcon: {
     width: "33.3%",
     height: "100%",
     justifyContent: "center",
     alignItems: "flex-start",
-    backgroundColor:'dodgerblue'
+    //backgroundColor:'dodgerblue'
   },
   logoStyle: {
     height: "100%",
-    backgroundColor:'dodgerblue'
+    //backgroundColor:'dodgerblue'
   },
   plusStyle: {
     width: "33.3%", 
     height: "100%", 
     justifyContent: "center",
     alignItems: "flex-end",
-    backgroundColor:'pink'
+    //backgroundColor:'pink'
+  },
+  contentContainer:{
+    alignItems: 'center',
+  }
+});
+
+const categoriesStyle = StyleSheet.create({
+  subtitle: {
+    marginTop: "15px",
+    fontSize: "30px",
+    fontWeight: "400",
+    marginBottom: "5%",
+  },
+  categoriesImgContainer: {
+    width: "90%", 
+    alignItems: "center",
+  },
+  categoriesContainerUP: {
+    flexDirection: "row",
+    width: '100%',
+    justifyContent: "space-around",
+  },
+  categoriesContainerDOWN: {
+    flexDirection: "row",
+    width: '65%',
+    justifyContent: "space-between",
+  },
+  categorieIMG: {
+    width: "100px", 
+    height: "100px", 
+    borderRadius: "100%",
+    marginBottom: "10px",
+  },
+  categorieTouchable: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "5%",
   },
 
 });
